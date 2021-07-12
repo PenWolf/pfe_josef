@@ -1,0 +1,691 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de voitures{% endblock %}
+
+{% block body %}
+<!-- backtotop - start -->
+		<div id="thetop"></div>
+		<div class="backtotop">
+			<a href="#" class="scroll">
+				<i class="far fa-arrow-up"></i>
+			</a>
+		</div>
+		<!-- backtotop - end -->
+
+		<!-- preloader - start -->
+		<div class="preloader">
+			<div class="animation_preloader">
+				<div class="spinner"></div>
+				<p class="text-center">Loading</p>
+			</div>
+			<div class="loader">
+				<div class="row vh-100">
+					<div class="col-3 loader_section section-left">
+						<div class="bg"></div>
+					</div>
+					<div class="col-3 loader_section section-left">
+						<div class="bg"></div>
+					</div>
+					<div class="col-3 loader_section section-right">
+						<div class="bg"></div>
+					</div>
+					<div class="col-3 loader_section section-right">
+						<div class="bg"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- preloader - end -->
+
+
+		<!-- header_section - start
+		================================================== -->
+		<header class="header_section secondary_header sticky text-white clearfix">
+			<div class="header_top clearfix">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-7">
+							<ul class="header_contact_info ul_li clearfix">
+								<li><i class="fal fa-envelope"></i> rotorsmail@email.com</li>
+								<li><i class="fal fa-phone"></i> +1-202-555-0156</li>
+							</ul>
+						</div>
+
+						<div class="col-lg-5">
+							<ul class="primary_social_links ul_li_right clearfix">
+								<li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#!"><i class="fab fa-instagram"></i></a></li>
+								<li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#!"><i class="fab fa-youtube"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="header_bottom clearfix">
+				<div class="container">
+					<div class="row align-items-center">
+
+						<div class="col-lg-3 col-md-6 col-sm-6 col-6">
+							<div class="brand_logo">
+								<a href="index.html">
+									<img src="assets/images/logo/logo_01_1x.png" srcset="assets/images/logo/logo_01_2x.png 2x" alt="logo_not_found">
+									<img src="assets/images/logo/logo_02_1x.png" srcset="assets/images/logo/logo_02_2x.png 2x" alt="logo_not_found">
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-6 col-sm-6 col-6 order-last">
+							<ul class="header_action_btns ul_li_right clearfix">
+								<li>
+									<button type="button" class="search_btn" data-toggle="collapse" data-target="#collapse_search_body" aria-expanded="false" aria-controls="collapse_search_body">
+										<i class="fal fa-search"></i>
+									</button>
+								</li>
+								<li class="dropdown">
+									<button type="button" class="cart_btn" id="cart_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<i class="fal fa-shopping-cart"></i>
+										<span class="cart_counter bg_default_red">3</span>
+									</button>
+									<div class="cart_dropdown rotors_dropdown dropdown-menu" aria-labelledby="cart_dropdown">
+										<h4 class="wrap_title">Cart Items: (3)</h4>
+										<ul class="cart_items_list ul_li_block clearfix">
+											<li>
+												<div class="item_image">
+													<img src="assets/images/cart/img_2.png" alt="image_not_found">
+												</div>
+												<div class="item_content">
+													<h4 class="item_title">Digital Infrared Thermometer</h4>
+													<span class="item_price">$39.50</span>
+												</div>
+												<button type="button" class="remove_btn"><i class="fal fa-times"></i></button>
+											</li>
+
+											<li>
+												<div class="item_image">
+													<img src="assets/images/cart/img_2.png" alt="image_not_found">
+												</div>
+												<div class="item_content">
+													<h4 class="item_title">Digital Infrared Thermometer</h4>
+													<span class="item_price">$39.50</span>
+												</div>
+												<button type="button" class="remove_btn"><i class="fal fa-times"></i></button>
+											</li>
+
+											<li>
+												<div class="item_image">
+													<img src="assets/images/cart/img_2.png" alt="image_not_found">
+												</div>
+												<div class="item_content">
+													<h4 class="item_title">Digital Infrared Thermometer</h4>
+													<span class="item_price">$39.50</span>
+												</div>
+												<button type="button" class="remove_btn"><i class="fal fa-times"></i></button>
+											</li>
+										</ul>
+										<ul class="btns_group ul_li_block clearfix">
+											<li><a href="cart.html" class="custom_btn bg_default_red text-uppercase">View Cart <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></a></li>
+											<li><a href="#!" class="custom_btn bg_default_black text-uppercase">Checkout <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="dropdown">
+									<button type="button" class="user_btn" id="user_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<i class="fal fa-user"></i>
+									</button>
+									<div class="user_dropdown rotors_dropdown dropdown-menu clearfix" aria-labelledby="user_dropdown">
+										<div class="profile_info clearfix">
+											<a href="#!" class="user_thumbnail">
+												<img src="assets/images/meta/img_01.png" alt="thumbnail_not_found">
+											</a>
+											<div class="user_content">
+												<h4 class="user_name"><a href="#!">Rakibul Hassan</a></h4>
+												<span class="user_title">Seller</span>
+											</div>
+										</div>
+										<ul class="ul_li_block clearfix">
+											<li><a href="#!"><i class="fal fa-user-circle"></i> Profile</a></li>
+											<li><a href="#!"><i class="fal fa-user-cog"></i> Settings</a></li>
+											<li><a href="#!"><i class="fal fa-sign-out"></i> Logout</a></li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" class="mobile_sidebar_btn"><i class="fal fa-align-right"></i></button>
+								</li>
+							</ul>
+						</div>
+
+						<div class="col-lg-6 col-md-12">
+							<nav class="main_menu clearfix">
+								<ul class="ul_li_center clearfix">
+									<li class="active has_child">
+										<a href="#!">Home</a>
+										<ul class="submenu">
+											<li><a href="index_1.html">Home Page V.1</a></li>
+											<li><a href="index_2.html">Home Page V.2</a></li>
+										</ul>
+									</li>
+									<li><a href="gallery.html">Our Cars</a></li>
+									<li><a href="review.html">Reviews</a></li>
+									<li><a href="about.html">About</a></li>
+									<li class="has_child">
+										<a href="#!">Pages</a>
+										<ul class="submenu">
+											<li><a href="service.html">Our Service</a></li>
+											<li><a href="gallery.html">Car Gallery</a></li>
+											<li><a href="account.html">My Account</a></li>
+											<li><a href="reservation.html">Reservation</a></li>
+											<li class="has_child">
+												<a href="#!">Blogs</a>
+												<ul class="submenu">
+													<li><a href="blog.html">Blog</a></li>
+													<li><a href="blog_details.html">Blog Details</a></li>
+												</ul>
+											</li>
+											<li class="has_child">
+												<a href="#!">Our Cars</a>
+												<ul class="submenu">
+													<li><a href="car.html">Cars</a></li>
+													<li><a href="car_details.html">Car Details</a></li>
+												</ul>
+											</li>
+											<li><a href="cart.html">Shopping Cart</a></li>
+											<li><a href="faq.html">F.A.Q.</a></li>
+											<li><a href="login.html">Login</a></li>
+										</ul>
+									</li>
+									<li class="has_child">
+										<a href="#!">Contact Us</a>
+										<ul class="submenu">
+											<li><a href="contact.html">Contact Default</a></li>
+											<li><a href="contact_wordwide.html">Contact Wordwide</a></li>
+										</ul>
+									</li>
+								</ul>
+							</nav>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div id="collapse_search_body" class="collapse_search_body collapse">
+				<div class="search_body">
+					<div class="container">
+						<form action="#">
+							<div class="form_item">
+								<input type="search" name="search" placeholder="Type here...">
+								<button type="submit"><i class="fal fa-search"></i></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- header_section - end
+		================================================== -->
+
+
+		<!-- main body - start
+		================================================== -->
+		<main>
+
+
+			<!-- mobile menu - start
+			================================================== -->
+			<div class="sidebar-menu-wrapper">
+				<div class="mobile_sidebar_menu">
+					<button type="button" class="close_btn"><i class="fal fa-times"></i></button>
+
+					<div class="about_content mb_60">
+						<div class="brand_logo mb_15">
+							<a href="index.html">
+								<img src="assets/images/logo/logo_01_1x.png" srcset="assets/images/logo/logo_01_2x.png 2x" alt="logo_not_found">
+							</a>
+						</div>
+						<p class="mb-0">
+							Nullam id dolor auctor, dignissim magna eu, mattis ante. Pellentesque tincidunt, elit a facilisis efficitur, nunc nisi scelerisque enim, rhoncus malesuada est velit a nulla. Cras porta mi vitae dolor tristique euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit
+						</p>
+					</div>
+
+					<div class="menu_list mb_60 clearfix">
+						<h3 class="title_text text-white">Menu List</h3>
+						<ul class="ul_li_block clearfix">
+							<li class="active dropdown">
+								<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+								<ul class="dropdown-menu">
+									<li><a href="index_1.html">Home Page V.1</a></li>
+									<li><a href="index_2.html">Home Page V.2</a></li>
+								</ul>
+							</li>
+							<li><a href="gallery.html">Our Cars</a></li>
+							<li><a href="review.html">Reviews</a></li>
+							<li><a href="about.html">About</a></li>
+							<li class="dropdown">
+								<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+								<ul class="dropdown-menu">
+									<li><a href="service.html">Our Service</a></li>
+									<li><a href="gallery.html">Car Gallery</a></li>
+									<li><a href="account.html">My Account</a></li>
+									<li><a href="reservation.html">Reservation</a></li>
+									<li class="dropdown">
+										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blogs</a>
+										<ul class="dropdown-menu">
+											<li><a href="blog.html">Blog</a></li>
+											<li><a href="blog_details.html">Blog Details</a></li>
+										</ul>
+									</li>
+									<li class="dropdown">
+										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Cars</a>
+										<ul class="dropdown-menu">
+											<li><a href="car.html">Cars</a></li>
+											<li><a href="car_details.html">Car Details</a></li>
+										</ul>
+									</li>
+									<li><a href="cart.html">Shopping Cart</a></li>
+									<li><a href="faq.html">F.A.Q.</a></li>
+									<li><a href="login.html">Login</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact Us</a>
+								<ul class="dropdown-menu">
+									<li><a href="contact.html">Contact Default</a></li>
+									<li><a href="contact_wordwide.html">Contact Wordwide</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+					<div class="booking_car_form">
+						<h3 class="title_text text-white mb-2">Book A Car</h3>
+						<p class="mb_15">
+							Nullam id dolor auctor, dignissim magna eu, mattis ante. Pellentesque tincidunt, elit a facilisis efficitur.
+						</p>
+						<form action="#">
+							<div class="form_item">
+								<h4 class="input_title text-white">Pick Up Location</h4>
+								<div class="position-relative">
+									<input id="location_one" type="text" name="location" placeholder="City, State or Airport Code">
+									<label for="location_one" class="input_icon"><i class="fas fa-map-marker-alt"></i></label>
+								</div>
+							</div>
+							<div class="form_item">
+								<h4 class="input_title text-white">Pick A Date</h4>
+								<input type="date" name="date">
+							</div>
+							<button type="submit" class="custom_btn bg_default_red btn_width text-uppercase">Book A Car <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></button>
+						</form>
+					</div>
+
+				</div>
+				<div class="overlay"></div>
+			</div>
+			<!-- mobile menu - end
+			================================================== -->
+
+
+			<!-- breadcrumb_section - start
+			================================================== -->
+			<section class="breadcrumb_section text-center clearfix">
+				<div class="page_title_area has_overlay d-flex align-items-center clearfix" data-bg-image="assets/images/breadcrumb/bg_13.jpg">
+					<div class="overlay"></div>
+					<div class="container" data-aos="fade-up" data-aos-delay="100">
+						<h1 class="page_title text-white mb-0">Gallery</h1>
+					</div>
+				</div>
+				<div class="breadcrumb_nav clearfix" data-bg-color="#F2F2F2">
+					<div class="container">
+						<ul class="ul_li clearfix">
+							<li><a href="index.html">Home</a></li>
+							<li>Pages</li>
+							<li>Gallery</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!-- breadcrumb_section - end
+			================================================== -->
+
+
+			<!-- gallery_section - start
+			================================================== -->
+			<section class="gallery_section sec_ptb_100 clearfix">
+				<div class="container">
+
+					<div class="row justify-content-center">
+						<div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+							<div class="section_title mb_60 text-center" data-aos="fade-up" data-aos-delay="100">
+								<h2 class="title_text mb_15">
+									<span>Featured Vehicles</span>
+								</h2>
+								<p class="mb-0">
+									Mauris cursus quis lorem sed cursus. Aenean aliquam pellentesque magna, ut dictum ex pellentesque
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<ul class="button-group filters-button-group ul_li_center mb_30 clearfix" data-aos="fade-up" data-aos-delay="300">
+						<li><button class="button active" data-filter="*">All</button></li>
+						
+					</ul>
+
+					<div class="feature_vehicle_filter mb-0 element-grid clearfix">
+                        {% for voiture in voitures %}
+                            <div class="element-item sedan " data-category="sedan">
+                                <div class="feature_vehicle_item" data-aos="fade-up" data-aos-delay="10">
+                                    <h3 class="item_title mb-0">
+                                        <a href="">
+                                            {{voiture.marque}} {{voiture.modele}}
+                                        </a>
+                                    </h3>
+                                    <div class="item_image position-relative">
+                                        <a class="image_wrap" href="{{path('addreservation', {matricule : voiture.matricule})}}">
+                                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFRYYGBgYGhgaGhocHBwcHB4cGBoaGhoZGhocIy4lHB4rIxgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHzYrJSs0NDQ0NjU0NDY0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAJYBTwMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAACAwEEBQAGB//EAEEQAAEDAQUFBgQEBQIFBQAAAAEAAhEDBBIhMUEFUWFxkSKBobHR8BMyQsEGFFLhYnKCkqIVMxYjssLxNENTc/L/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQIDBAX/xAAlEQACAgICAgIDAAMAAAAAAAAAAQIRAxIhMUFRBGETIpFxgaH/2gAMAwEAAhEDEQA/APSiu3ihNrasyXA9pp81IDN5C9B0ciia9mtQ1zV2i5u7qsmhTbv6GFbiMi7rK55VfB0RTou1KIgEGZ0SYSviO35LjW3xzTi5Lvkzmo+BwRKuK7RmR1UG1tGo7itLM6LSlUX7RaMhKg7Ub+k9UUwNAKYWHadsaAhvfiqL9p73HxVasVo9WovDeF49+1o1KW7aoOJlGrHZ7QvETIhQazf1DqvGDag4pTtrOP7I0FZ7WpamATMqn/qh3BeSdtJ29KftFx+pGqDk9gdrGMAFVNtcfrPVeV/PH9R6oXW3eSe9OkFM9ZV2kSA0umPeKULXuBPh5ryxtW7FD8ZxS4HR69u0o+uO9JftFv6pXlL7lBedZUlUekftMBKdtYbh1WAX8VwjegKNs7XOhC7/AFh6xA5F8RAzXG2H6eOKW/a9Q6xywWUKi74iANUbTqfqPVOG2HgZnw9FifEXX+KANOptB7s3u7jHkkXwqYcVMIGXRVCkWkBUC6FIdKQqLxtKn80dFSDkRQMsm0u3oTVO8pOK6SmAwvUX1DGo4QB6IRvjkjZuB6qqHnf5qtW2ixuRvHh6oqxWa+WcIwcNF5uptc/SI5klVK+0XHNx5DBCxjcj0tZ7Rm9oP832WdUtrAcO1xMjosI2lAa60UaM3ybbrcNAlOtyxzX4oXVeKdio1nW13spD7U46rONXioNUnJKx0XDUKg1FUvqHPRsFFk1FBqFIBUl/EeCLChpqrr5STU4rhVSsdDHOXXgkGpKkvU2A4lHfCrOehc7jKLGW74XfF3KnfRh2CQyyaig1dFVaTvUh5SsB17cpLikh/vFS5xRYBypvJJfxUh4RYDQ9EHpQfzUE8eqLGOhSCEoHiuvBKxUPcULX8ULXhE1w0KVjoZfXNKFh5I7/ABS2HQV5EDuQAhSHBGwUNJG9SwhKvBDgiwosly74gVcLsEWFFSrbnuwLie/7JRtBUuYBm2Oc+qgMGgb7711V9mVg/GJ1Q/EKsCnwHREKI/h6JUwtFa8V14q2aA4dEBsw4dEtWFleeSglWPy44dFwojh0T0YtkVgSiYwkgCSTkBr3BWBT5dMBGZJJwHFadg2ZebecCGEYNi654ORfq1hzu5kRezuhNVwOzPo0mfVeeRgWsgtbByfUPZBGoBlW5IGFJjehPIkyfEq7UaJDWgBrdAIAAyAAy08UisFpGBnKZ5/aG1KjHQx0AgOGAGBz0zxVL/X7R/8AI4d59V222dr+9viXD/qasdgOcxzWE5OMqNopONm4zblc/wDuO/uPqmDblYfWT3z91gh2894TGkEYHHwU/kfsrU3m7bf9Vw/zMDlYo7UafmpMIOoFz/pheabUlW6VpdduF3ZBvRhnEZ55FCmJxPUso0H6PYeDrw6OH3VPaFkdT7XzM/XEAfziTc5nDHNds+1B4x+YZ8RvWrZ3EfKe7QrXWMlaMtmnyYBqHUqb43zzWlaNlwb1FrQdaLoDXf8A1u+g8Pl5Jdkax8gNuuZg9jhdc07nA5c8llq1w3Romn0Ur85oXVIy1WybI0ZgCeSj4DP0joD5J6/aC/pmXenH9lAeVsGys1aO/BQKDNGgpUn5X9Hz6ZmDFCRB3rXFnbuA70HwGfwor7QW/TM0OO/3zRRqVoizD+HwTBZRqB77lOq9r+j59MzWsnRMbT4eC0BRp/USOvoiLaAHzOPKfulqvaDn0zMcz390Ib7hX3VGTAYY/ifn3AJrG0z8zCBpDjjyHdmptLyXT9FANOGGCN5Oi0abKA+lw7z6pnwqJ39XT5pqvaFT9Mxg4oyN7oWm9tAfS/8AzQX7Pq13j6ope0Ln0zNaJwzKIsjRX/zFnH0O7v8A9ImWmzH6HdT6pce0Pn0ZxZKW5sLdY+zk4scJ1JdHUEp/wbN/B3vPqnSflC5Xg2Py0wQCTu9nLHyUO2ZeJlk82jMbzrpvXkrT+JbY1xbcDXAwZOow+snHBLO3rWYms4fytYMtJXnLHJef+nd+RPweqOwGOJb8MTwhp54ETokP/C7N5b/Xu5ysey7Wdg51apfxBvHDP6CARuzhalmiqQXsbUjJ5eHmJ4EhpAGRAB4KlPJFcNiqMn0irX2JRaY/MsB3SHHdkFVdsWTDHOfxFMtHV7mg9y9C+oWABlCABm0szAObREnLHfou/MukTIyBbqBiNIHEnw0VL5WVeRPDB9oyaP4aBEuqEEZgNbI4Eh5E4hH/AKBSbJc95jP5Qtk1WzHxG4CSCYdEfpiRmOiy9pGHAD5YLjjqcugw5K4ZsuSSTlRMsWOMbSspWqyUxdDB2L4L5kuc0SY3xeuyNQCDnCqfifaRZQc6m4hwzjAgbxI5ImOY9zg14Jbg4AgwcRBGYyPRHUp6dV6cca1pP/Zwyl+1tHzartN7vmqVHc3H1V/Y1svvDH1HNZBM3ruIyBPHmvU1tm0jiaTCeLW+iz7Zs2kAT8Nv9oWf4Zp3dlPJFqqMi12hpcWtIddcXTMyTjnrkFkvpuBLQ0kAnQnDQ9IVmz0Lr4C2qbd4hP8AE5pOXDDbXhcnnm0Xx8j/AO13onMs9TRjui3hUjimMtzBmFS+MvYnlMNthecmHvj1Vmhs6r+jxb6rbZbqe4Kwy1M0JHI+shUsEfYvyMybLsysCDEb4cAY1ErYs9nrNd2W4ahz5n/HApjLaR8tQf1sBHVkHwVhu1awxuMeN7Hf9p9U/wASJcmywA+IcxkfzEEcsFXt9ibUbecS2o0Qyoyb44HABzeBPIhc38RjJ15h/iEeIkK0zbM4ggjeIKeiqg82VbPUr/CYyrcIbe7clzydL0mYgnOeJOaJtWCMJ5i6rzdr74RjaLTm1vRYP40X7NVmaKV4uza2OBPmCgcHDBt37+K022imfoHdgmj4Tsx4/fNZv4tdMtZ/aMN7HnNxPKP2SW0SPYW+/ZzDixx5E+ylVLG8AXKbXjWHOvdwmD5rOeOcel/CoyjLyZPa0IHUoDeP1OI4SrBqNyLSDriQcDqDkucBgQ2MBjLnTGuf20WGz9Guv2VHUjud4oxZHTiLvF2GG+Mz3SmPtOZDnN3wwgR/Sia9p+qeZIT3YaoX8BjdxO8/YevgjY0a4nfM+Klrh7Pqoe8ZkEcMB9kbC1CFIceihzBuQ/FboT4Lm1B+p3QH7hPZj1QTWgHcpNNpx+ym/ue2dxBHnh4oHVXNxhh6ewpsaDFJuOHj9ilvsoOWB5IvzzdWt7nBQba3cceSOQ4FfDc3KRyx8EYqz8wx3jyIR/nWan7pVXaFPST3eqKb8BwvINopOe34nwwxmDQWtIYSMMzIkxjGqpF3Jeh2VtRjKD6NRrnB5N27GEgY4nQgFZNWleEjMePEKGCKwepvDcZ71BCgHekBbp22oPlqPH9RI6EqzT21aG/VeG4gf9sFZwnRMa9Kh2a1P8RP+tn9r3Ad7SHSs23fiOn8dtK6W3wMcIBOABjeR5KJB9/deY21TAtBz7TGAERgSS0HEZSFUUrCTdHrzaGsJIaATiSBBPM6qvbbRfbDKhpuBzuh4PAg5rJZai9jXbwD3xiOqrvrGVvGco9MiUYy8HqmFpAggwOH2UOjVeVbbCNVYp7XdqZ5rZZ5UZfiiatXZ9J2NwA7xgfBIq2CB2SYUWe3h0d25WbVbWMbiRlqYA5lVj+Q9qkEsKq4mLXZCovVyrXDxLHA8iCqpdvXbCUZK4s45xlF00JK4OKG9Ilow4mPD1TBQfF64YgmQCRAxJkAiOKTnFeS1FnNquGqdTtRGMkHeMFSbX/hJ5QfOEx1QD5gW93ohZI+xuL9GmLeTg+HcdeuqWSJlhLTwwVFtZmjh1jwKaHq1T6JfHZeZbXD5seOR9Fdo2ucisX4nvNSH806Cz0bLSVYZaF56hbDk7r6rRp1d2KKHaNqnaiFo2TaRB37wsOyODiAZ5CJcNQ2R8273Nnazvgsp1WOLmPxI1AkjGIF4EZcTkVnKrpjS8nq6tmp2ht4YOGuvI7+awNoWV9N0A3pxwAmMssPNRR2g2kWufVYzCbr3tDi063HEEjiFbtNdlouVKLw9pcWdkgiQL13eHawdMVwZ4xa/WrOnHKSfPRlEP1n+0HuUFp1u9MUTaL5eJJk5T2mjUEiIO4JT7O+80Ne4AYEGSHYZmQSTxvSuG2jp4IIGjQeXlwUEA5jPj+6daRBhsEgSReh0YCQIJKU+jLS5r3tiMHtaJ/wk4bjvVWwpCvgcT4HyS3UH6e9Z8SrbGS2ZDsdLze4Bx9Puua2WAiGHIh2MR34SmmxOKKDqR5+KV8PORgOvktM5wd2mXXL2UqocDEY4cu4nNNSZLijMcWjf3CPEhJdUWwxkjGDjoCZ5A5apeH6CDlF0CSOIMeKtS+hOP2Y5duXO7lp1GkYmk8/2+qIWUETdjgRPWFWxGrBT6bsc4hV2unyRMJJIXOzVD7TR+pqqiD3J9KuB2XEQcwcOnqkWp7AT22j+oZIQ37OmPfiFIOHuQqzrazV7fPolOt7Bk8dwdHknq/RNo0GndPvfvXn/wAQmKjH4jssaYygueSMcjgr/wDqdP8AV4H0WXtm1sfdc0nswdcwcM88z7KqMWn0JyVE2G2hodOID3iOBMjzWlTr035dNV5vZ7HvqEMu3iSYcRB4Q7NW7XYnMMuBou0Ml1Mng4SWHgZ7lokhJs1qtmaclRq2aMlSNsewgPBxyOEHiCMHdycLbOqpJhaLNkeQQsfbFsNR5xwBwHHf9u5OfaMRznpJWewy4niT5mfNKSFYVIOabwN0+81o2e1TnmkN+GRHbBibxII/qaBgOIJjiq2LTBwV4puDtESjsqZp1KEuDmwHDfkea9T+G6zLQypZHONN9YhzDN0ucwf7T3D5mOzG5y8fRrq5da8YgHmuuWOOTmPDMNnHh9F3aOx3sBv0XsIkEOYWkRnmIPcj2NsiS2o9jnUmgPqFsYM4kHsn+HAnIY5RT2taWCGWm0tAyDa9UDkBehDadpWmoAH2is8AyA55cARk7GceOah4cv0PaHixu3dnBlQ3wyHAOYWNDKb2OEtfTAORG/GZnFUbJsgvi40uJmA3F2AkmG44b1qUPxJbWNDG2h10ZNLKTgJzgOYYSbZtu11WOY+u667Bwa2my8M4cWNBI4HBH4sldL+hcfZnvohowquG+cR1MpLKjiYa5rhqbrhG4SMJ9EBsMnFzj74K3SowIAgLXFjy3+zpEynCuCL0CXQANRP3C2vgFjWtvNabt6pNwua443IfLQGjAmJJDtIAyKkCAdXMEcC4Ao7TtcFzi4Em8cbrWzBIxJOOUTwWfyp/so2VijxtRZqNqkdmu5roJADWlpGmLGiehlbezNqNrUHUqzbtaWtJwEkdpryCRmA7EAn5uZ81T2s9xLadO8dwc5xHIMbI6q9ZNj2yvUa8USIEh127iIIBDiTEiO871yuajyjZRb7PTUaYe5xhsmTEXgA7stkDNsAdwU7Ps9KjtCgLNVZFpDm1qYIDWuawuYYjsuwd3ujUrMb+ErQ7/wBRaWsAg3e3WgB10/8ALbAGIM9nCDuKO02BlltFnuPc4j4tSXFkdiWy0M+UXpwOIu5KVPaSSGo0m2et/EezXioGse0OaJILoGJOPRUrPY3YPeSSD9N2OBwIhI2ZtFz2B7nS5xcXE4/W4DTcArLywunGd4AcO8YlZZH+zRtBfqinXstUPJIAk3hERnOGhSnvcSSW4nVnoJWmahGLXOB4AkdHZJb6hdiWtcd5EHo0pRZTRAshLMW3XQCMsQdYAx80LLIIJi6QDEvcQTkQCZg8D3blFQ3ovBrI/mmO8ZKGscMWuwiMZI6gyOqSTBsXQaDMT2cCSCIPQE84CRVYWukBzt4a1wOG4gTxzK0LRRvU7t9t45G8CRyJN7/JUwS14Msa4ARdLgZGuBz5KqFZDIcJbILsr3kZw8lDqUEy7XKMjuDsOkI30Wkue9oLjMuzOO9pghVjQbPzl2GBF4dxEmekISvsLOrWUEQHA6y8Xj4EHxQ06YaO25sb+1nxLnFUKjbryC6t3PZHiR5Ky6q66BTqODtfiNnpUZh3IaSBNs8k61vP1u6+ihtN78QCVXlb34cr4OZuIPXA+Q6rqhFN0csm6MW0UnMi8InLuQ35C9NtWzX2ED5hi3nu715RpTnDVii7BLlBcpeEslQUQSgLiMtRGPFEUJClgVHMK17Dt57RdqD4jcsc45/VyPVUSEt7FDRakb7KdOoD+XeBOLqThLT/AEn5eYWbaLI0OjGk/wDS4yw/yP8AWeaz8QZEgjIjAq9T2q4i7UAe3jmkpNFcMrVWOYQHNg4kHeDuORHEJLBgeOHvorFdrDiwkj9JzHI6hV2DuxCtu1ZNUNa5twg/MAfMfugmWg7uyeX0+RHcEL5JjWdOKeML7CCOyf7mkO8muHepABjlboWiFRYU5i6scnSZEkn2XaluxgQOaD/UuXRZ5xf18ypAkaSpfysl9gsUa6NNtuncjFt4BY/cpa52gJ4YlVH5cvJLwxPQWO2i9BaMQQMcJIIE4b4QO2ocrkH0WUx6Za6uT4MOwJ0vti94Fp/qW7zurbIWJdUOrWkkg7i09HApGze1XbgJLiYzxgnI54pbH3yGgYkjzCmzOdTeHNHab2heAAjIkyea5Ms1KSkaxi1FpH1n8PWp7GtvsaWNvTgL5ddabkkSAL7T0C075DGmsxrb9b4gqPeOw2nXDmXxUi4bheAGzlxw+U/8SWosDG2hzWkYNpiHA4AAuaASXQMSScAs4Vi+p2yXuc1xLnSTN2RMGcLs4b1hOpNtGseEkz6f/wAQ0aJbfrB5AhzGNfWJxDyy92RGGDpI/wCYREDHxX4s2+6s5rmCo0Bgptv3A4tJcTg0CCCXt1MEGVk0qbpiSHRBA+ZpbiHHNwGpPZE8khrb9QBrQADgGzEzJicYmAJ0ARjg2+AlLg9xs+rFKmwtmGNxJ3id+Ga0Pj3cnOHIhw/ylNFrsw/5bi5wZDQ9pe0GABhGYw3Jgo2d/wAlpunc8T9wFM1+zr2VGX6oBlpc7EgO6A94Sn2phdi0jp6g+acdkVs6b6TxwIB7sR5qtatmVh87HjfhfHkfMqUqKbLBqiMJA3YnwyQh7iJYQeUnqIVVpaBdulpG4EdQMPBKvGcXTzB/aE6AtMYJggNJ1aLvheUVbE07zxj9seiS+odD0JPgZUUbY8GC7/GfBPkXBZpuuZ+Uf9J+ysCo12bmEbnH7OH3VR9URmJ4YeDglsfwB8D/AJAqa8lWXjZhM3Gkb2EHwkpbrPGIcWc2x/kIJ6JLGNOR+0fbwVyiCMnlw49rpgns0GqZ82lXdlVbtVvHA96pKWPgyMwcO7JdUXTs5Xye2K8ttiy3Hkj5X4jnqPv3r01nfeaDvEqrtay32EDMYt5jTvXRNbRM48M8rGCU4Jl5Q84clzGgBCEhHKiEgAIQEJhCG6kAstS3MTiFN1JoqyqWqW4zy9/dOc1LcFFUOwHHLqntfLgDudjzB9Umcp3+C6ceQPlA+yYyGlWGFV9Eym5bYnxRMgGuxJ4HxEKCicwiZwOUKGtJyE9yx1d9FWRPHzXcymtszzoArNGwmZJ6AfdaRwzl0iXKK8lWm7dlpp4K3ZXh0seYa+MSYDXD5HE6DEtPBxOgVxtnbGLQeJz5ykVqNEfVB3DteAXS8LjGm0ZrIm+DMqNLXEHsuaSCNQRgRzWiWCoC9twOm85pLQQ7WA9wBYTjgDBJBwibNChSrf7jnMeAAHOa665owbeI+VwGEnAgDIzNyjsmi3N97+UfcrmWNPtpGt/Rm/kyQQXNg9otvF3a1c26AwHTEmBvTrBsp7nhzQXEGYAlsZXTOERhyW1Tq0mfLSk73+gnwKKptOocA66NzMPHPxScsUfN/wCA1k/FGk3Z7G0iyrcpNdBIESQMcGNAkzGMOyxVN9WzMaWUKeOr3fN/SNOc9wOKz4JkjHf+8rmweah5nVRVIrT3yMHv/wAo2PPv1zQXSpA9n7KBjhaHDJxHfHor1n2/aGfLUdyJKyyYzw98VzOX2/ZNMTPRM/FbyIqU2P4kAHyITBtWyvwqUiwHdp4kf4rzTm7vfRLLjrPn5p8MOUewZY7K7/atLWn9LwR5R5pdb8P1XDsGm8b2PHkb3mvKDh6eBRsqOGILgeBP2yRqh7M26uzbSzOk8DgfskMtD2fO1w4ObHiQosv4itLMqjyNziHD/LFaVL8Wz/uUmO3kNunwIRqGxU/MtOMEcJnxMp7apjJw6kdf2Vg7QsNT5mvpn9Qy6xKbTsdE/wC3aWEbnQPFwU6vwPZeT5k4LgphctzFHp9iVb1Mb29n08FpQvPfh6p2nN0IleiaF1QdxMpKmeS2xZblQwOy7tD7j3vWe1eu2xZb9Mx8zcR3ZheUWE46yLi7QD2aoWpqFzFAxahSCihACyELgmQohIoUhc1OLUN1KgEMa2YeSBoQhqQJDTPHJPfTlJdRI4qWmNMENwQ3YRlpUfDSTa6GE2uR7lNbayNB0/dJ+GrFGwPdjEDefcq1mlHyLVMn8+dGjxVmkyq4TeDR49P3T7PZGs+meOvcrJAzB98lMvkZH5Kjij5QhtjZ9RLj/ESegyhPo0mtwAHQKWnQgEeHv3KMM3YcFg3KXbNEkugmDcSFJpDd0wPp3KWMI4jeEYbu8EqHYDAcp64H0PcmtYNRCljtD4pl0j5emYRQ7Fhp5+aK5vCIt1gjliO8Lm7hB97lSRJAZCkhFMZyPFdE6++SoQHdIU/DnJHdI3HwQxju54eKYgLnDohcDoZTnDf6oTHv907FQlr/AHl4Liff/hMe4c0NzcmAJ70MewiIQlvv3imIlQCdCoA59yIO4oEYhKlcuWhmWbBUuVGkb464fdexauXLfF0yJBALyG1LMGVHNGRMjhOi5cjL0EOyk0JjQuXLA1EvGKiFC5BJN1dC5cgDrqCFy5ABXUJC5cgCLqdZrHeOcDxXLlMui12abbI1mQBHHPuOiI0sRBzy/cLly5zUMGRiF3wx7zXLkigTAMESD3FG+kM8Vy5MRNNpzlG7LHqM/wB1y5MQRaRrKNqhcgA7y48Vy5MCbpiZngcfFC2DpC5chAHMYKPfBcuTQgL07wpULkCOcwZobg94FSuVAA7rzQxK5cgCBj++Knn6+a5cmSf/2Q==" alt="image_not_found">
+                                        </a>
+                                        <span class="item_price bg_default_blue">{{voiture.prix}}</span>
+                                    </div>
+                                    <ul class="info_list ul_li_center clearfix">
+                                        <li>{{voiture.puiss}} CV</li>
+                                        <li>{{voiture.nbplace}} Place</li>
+                                        <li>{{voiture.consumation}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        {% endfor %}
+					</div>
+
+					<div class="pagination_wrap clearfix">
+						<div class="row align-items-center justify-content-lg-between">
+							<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+								<span class="page_number" data-aos="fade-up" data-aos-delay="100">Page 1 of 3</span>
+							</div>
+
+							<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+								<ul class="pagination_nav ul_li_right clearfix" data-aos="fade-up" data-aos-delay="300">
+									<li><a href="#!"><i class="fal fa-angle-double-left"></i></a></li>
+									<li class="active"><a href="#!">1</a></li>
+									<li><a href="#!">2</a></li>
+									<li><a href="#!">3</a></li>
+									<li><a href="#!"><i class="fal fa-angle-double-right"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- gallery_section - end
+			================================================== -->
+
+
+			<!-- search_section - start
+			================================================== -->
+			<section class="search_section sec_ptb_100 clearfix" data-bg-color="#161829">
+				<div class="container">
+					<div class="section_title text-center mb_60">
+						<h2 class="title_text text-white mb-0" data-aos="fade-up" data-aos-delay="100"><span>Find the right car for every occasion</span></h2>
+					</div>
+
+					<div class="advance_search_form2 p-0 mt-0 mb_60 shadow-none">
+						<form action="#">
+							<div class="row align-items-end">
+								<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+									<div class="form_item" data-aos="fade-up" data-aos-delay="300">
+										<h4 class="input_title text-white">Pick Up Location</h4>
+										<div class="position-relative">
+											<input id="location_two" type="text" name="location" placeholder="City, State or Airport Code">
+											<label for="location_two" class="input_icon"><i class="fas fa-map-marker-alt"></i></label>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+									<div class="form_item" data-aos="fade-up" data-aos-delay="400">
+										<h4 class="input_title text-white">Pick A Date</h4>
+										<input type="date" name="date">
+									</div>
+								</div>
+
+								<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+									<div class="price-range-area clearfix" data-aos="fade-up" data-aos-delay="500">
+										<h4 class="input_title text-white">Price</h4>
+										<div id="slider-range" class="slider-range clearfix"></div>
+										<input class="price-text" type="text" id="amount" readonly>
+									</div>
+								</div>
+
+								<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="600">
+									<button type="submit" class="custom_btn bg_default_red text-uppercase">Find A Car <img src="assets/images/icons/icon_01.png" alt="icon_not_found"></button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="offers_car_carousel slideshow4_slider" data-aos="fade-up" data-aos-delay="700">
+					<div class="item">
+						<div class="gallery_fullimage_2">
+							<img src="assets/images/gallery/img_03.jpg" alt="image_not_found">
+							<div class="item_content text-white">
+								<span class="item_price bg_default_blue">$670/Day</span>
+								<h3 class="item_title text-white">Phasellus porta pulvinar metus</h3>
+								<a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img src="assets/images/icons/icon_02.png" alt="icon_not_found"></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="gallery_fullimage_2">
+							<img src="assets/images/gallery/img_04.jpg" alt="image_not_found">
+							<div class="item_content text-white">
+								<span class="item_price bg_default_blue">$670/Day</span>
+								<h3 class="item_title text-white">Phasellus porta pulvinar metus</h3>
+								<a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img src="assets/images/icons/icon_02.png" alt="icon_not_found"></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="gallery_fullimage_2">
+							<img src="assets/images/gallery/img_05.jpg" alt="image_not_found">
+							<div class="item_content text-white">
+								<span class="item_price bg_default_blue">$670/Day</span>
+								<h3 class="item_title text-white">Phasellus porta pulvinar metus</h3>
+								<a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img src="assets/images/icons/icon_02.png" alt="icon_not_found"></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="gallery_fullimage_2">
+							<img src="assets/images/gallery/img_06.jpg" alt="image_not_found">
+							<div class="item_content text-white">
+								<span class="item_price bg_default_blue">$670/Day</span>
+								<h3 class="item_title text-white">Phasellus porta pulvinar metus</h3>
+								<a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img src="assets/images/icons/icon_02.png" alt="icon_not_found"></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="gallery_fullimage_2">
+							<img src="assets/images/gallery/img_03.jpg" alt="image_not_found">
+							<div class="item_content text-white">
+								<span class="item_price bg_default_blue">$670/Day</span>
+								<h3 class="item_title text-white">Phasellus porta pulvinar metus</h3>
+								<a class="text_btn text-uppercase" href="#!"><span>Kook A Car</span> <img src="assets/images/icons/icon_02.png" alt="icon_not_found"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- search_section - end
+			================================================== -->
+
+
+		</main>
+		<!-- main body - end
+		================================================== -->
+
+
+		<!-- footer_section - start
+		================================================== -->
+		<footer class="footer_section clearfix">
+			<div class="footer_widget_area sec_ptb_100 clearfix">
+				<div class="container">
+					<div class="row justify-content-lg-between">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-sm-12">
+							<div class="footer_about" data-aos="fade-up" data-aos-delay="100">
+								<div class="brand_logo mb_30">
+									<a href="index.html">
+										<img src="assets/images/logo/logo_02_1x.png" srcset="assets/images/logo/logo_02_2x.png 2x" alt="logo_not_found">
+									</a>
+								</div>
+								<p class="mb_15">
+									Cras sit amet mi non orci pretium consectetur. Donec iaculis ante ac sollicitudin luctus. Phasellus ut lacus lacus. Phasellus sagittis ex id tortor tincidunt luctus. Donec consectetur consequat bibendum
+								</p>
+								<div class="footer_useful_links mb_30">
+									<ul class="ul_li_block clearfix">
+										<li><a href="#!"><i class="fal fa-angle-right"></i> Rental Information</a></li>
+										<li><a href="#!"><i class="fal fa-angle-right"></i> F.A.Q.</a></li>
+									</ul>
+								</div>
+								<div class="form_item mb-0">
+									<form action="#">
+										<input id="footer_search" type="search" name="search" placeholder="Search">
+										<label for="footer_search" class="input_icon"><i class="fal fa-search"></i></label>
+									</form>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-4 col-sm-12 col-sm-12">
+							<div class="footer_contact_info" data-aos="fade-up" data-aos-delay="200">
+								<h3 class="footer_widget_title">Contact Us:</h3>
+								<ul class="ul_li_block clearfix">
+									<li>
+										<strong><i class="fas fa-map-marker-alt"></i> Main Office Address:</strong>
+										<p class="mb-0">
+											Unit 9, Manor Industrial Estate, Lower Wash Lane, Warrington, WA4
+										</p>
+									</li>
+									<li><i class="fas fa-clock"></i> 8:00am-9:30pm</li>
+									<li><i class="far fa-angle-right"></i> Other Office Locations</li>
+									<li><i class="fas fa-envelope"></i> <strong>rotorseml@eml.fr</strong></li>
+									<li><i class="fas fa-phone"></i> <strong>+880 1680 6361 89</strong></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-4 col-sm-12 col-sm-12">
+							<div class="footer_useful_links" data-aos="fade-up" data-aos-delay="300">
+								<h3 class="footer_widget_title">Information:</h3>
+								<ul class="ul_li_block clearfix">
+									<li><a href="#!"><i class="fal fa-angle-right"></i> Find a Car for Rent in the Nearest Location</a></li>
+									<li><a href="#!"><i class="fal fa-angle-right"></i> Cars Catalog</a></li>
+									<li><a href="#!"><i class="fal fa-angle-right"></i> F.A.Q.</a></li>
+									<li><a href="#!"><i class="fal fa-angle-right"></i> About Us</a></li>
+									<li><a href="#!"><i class="fal fa-angle-right"></i> Contact Us</a></li>
+									<li><a href="#!"><i class="fal fa-angle-right"></i> Help Center</a></li>
+									<li><a href="#!"><i class="fal fa-angle-right"></i> Privacy Police</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer_bottom text-white clearfix" data-bg-color="#000C21">
+				<div class="container">
+					<div class="row align-items-center justify-content-lg-between">
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<p class="copyright_text mb-0">Copyright © 2020. Rotors by <a class="author_links text-white" href="#!">Merkulove</a></p>
+						</div>
+
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<ul class="primary_social_links ul_li_right clearfix">
+								<li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#!"><i class="fab fa-instagram"></i></a></li>
+								<li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#!"><i class="fab fa-youtube"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer_section - end
+		================================================== -->
+<!-- fraimwork - jquery include -->
+<script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
+<script src="{{asset('js/popper.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+
+<!-- animation - jquery include -->
+<script src="{{asset('js/aos.js')}}"></script>
+<script src="{{asset('js/parallaxie.js')}}"></script>
+
+<!-- carousel - jquery include -->
+<script src="{{asset('js/slick.min.js')}}"></script>
+
+<!-- popup - jquery include -->
+<script src="{{asset('js/magnific-popup.min.js')}}"></script>
+
+<!-- select ontions - jquery include -->
+<script src="{{asset('js/nice-select.min.js')}}"></script>
+
+<!-- isotope - jquery include -->
+<script src="{{asset('js/isotope.pkgd.js')}}"></script>
+<script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
+<script src="{{asset('js/masonry.pkgd.min.js')}}"></script>
+
+<!-- google map - jquery include -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2HrmqE4sWSei0XdKGbOMOHN3Mm2Bf-M&ver=2.1.6"></script>
+<script src="{{asset('js/gmaps.min.js')}}"></script>
+
+<!-- pricing range - jquery include -->
+<script src="{{asset('js/jquery-ui.js')}}"></script>
+
+<!-- counter - jquery include -->
+<script src="{{asset('js/waypoint.js')}}"></script>
+<script src="{{asset('js/counterup.min.js')}}"></script>
+
+<!-- contact form - jquery include -->
+<script src="{{asset('js/validate.js')}}"></script>
+
+<!-- mobile menu - jquery include -->
+<script src="{{asset('js/mCustomScrollbar.js')}}"></script>
+
+<!-- custom - jquery include -->
+<script src="{{asset('js/custom.js')}}"></script>
+{% for voiture in voitures %}
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>matricule</th>
+            <th>marque</th>
+            <th>puiss</th>
+            <th>modele</th>
+            <th>nbplace</th>
+            <th>consumation</th>
+            <th>couleur</th>
+            <th>prix</th>
+        </thead>
+        <tbody>
+            <td>{{ voiture.id }}</td>
+            <td>{{ voiture.matricule }}</td>
+            <td>{{ voiture.marque }}</td>
+            <td>{{ voiture.puiss }}</td>
+            <td>{{ voiture.modele }}</td>
+            <td>{{ voiture.nbplace }}</td>
+            <td>{{ voiture.consumation }}</td>
+            <td>{{ voiture.couleur }}</td>
+            <td>{{ voiture.prix }}</td>
+        </tbody>
+    </table>
+{% endfor %}
+{% endblock %}
