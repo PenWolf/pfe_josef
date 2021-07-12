@@ -14,13 +14,11 @@ class ReservationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('code', TextType::class)
-            ->add('dateReservation', DateType::class)
-            ->add('dateDebLoc', DateType::class)
-            ->add('dateFinLoc', DateType::class)
-            ->add('prixReservation')
-            ->add('saison')
-            ->add('cin')
+            ->add('code', TextType::class, ['label'=>false, ])
+            ->add('dateDebLoc', DateType::class, ['label'=>false, ])
+            ->add('dateFinLoc', DateType::class, ['label'=>false, ])
+            ->add('prixReservation', null, ['label'=>false, 'attr' => ['readonly' => true]])
+            ->add('saison', null, ['label'=>false, ])
         ;
     }
 

@@ -41,29 +41,34 @@ class User implements UserInterface
     public $confirm_password;
     private $plainPassword;
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $Cin;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $Nom;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $Prenom;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $Tel;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $DateNais;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $fidele  = false;
 
 
     public function getId(): ?int
@@ -223,6 +228,18 @@ class User implements UserInterface
     public function setPlainPassword($plainPassword)
     {
         $this->plainPassword = $plainPassword;
+
+        return $this;
+    }
+
+    public function getFidele(): ?bool
+    {
+        return $this->fidele;
+    }
+
+    public function setFidele(?bool $fidele): self
+    {
+        $this->fidele = $fidele;
 
         return $this;
     }

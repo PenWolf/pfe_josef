@@ -363,9 +363,9 @@
 								</h3>
 								<div class="item_image position-relative">
 									<a class="image_wrap" href="#!">
-										<img src="https://www.bmw.fr/content/dam/bmw/common/home/teaser/bmw-i4-edrive-40-hometeaser-1680x756.jpg" alt="image_not_found">
+										<img src="{{voiture.image}}" alt="image_not_found">
 									</a>
-									<span class="item_price bg_default_blue">$230/Day</span>
+									<span class="item_price bg_default_blue">230TD/Day</span>
 								</div>
 								<ul class="info_list ul_li_center clearfix">
 									<li>Sports</li>
@@ -381,42 +381,32 @@
                             <strong><span style="color : green">matricule : </span>{{matricule}}</strong>
 								{{ form_start(form_Reservation) }}
 									<div class="row">
-										<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+										<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 											<div class="form_item" data-aos="fade-up" data-aos-delay="100">
 												<h4 class="input_title">Code Réservation</h4>
 												<div class="position-relative">
 													{{ form_row(form_Reservation.code) }}
-                                                    <label for="location_two" class="input_icon"><i class="fas fa-map-marker-alt"></i></label>
 												</div>
 											</div>
 										</div>
 
-										<div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-											<div class="form_item" data-aos="fade-up" data-aos-delay="200">
-												<h4 class="input_title">Date Réservation</h4>
-												{{ form_row(form_Reservation.dateReservation) }}
-											</div>
-										</div>
-
-
-										<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+										<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 											<div class="form_item" data-aos="fade-up" data-aos-delay="400">
 												<h4 class="input_title">Saison</h4>
 												<div class="position-relative">
 													{{ form_row(form_Reservation.saison) }}
-													<label for="location_three" class="input_icon"><i class="fas fa-map-marker-alt"></i></label>
 												</div>
 											</div>
 										</div>
 
-										<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+										<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 											<div class="form_item" data-aos="fade-up" data-aos-delay="500">
 												<h4 class="input_title">Date Début de Location</h4>
 												{{ form_row(form_Reservation.dateDebLoc) }}
 											</div>
 										</div>
 
-										<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+										<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 											<div class="form_item" data-aos="fade-up" data-aos-delay="600">
 												<h4 class="input_title">Date Fin Location</h4>
 												{{ form_row(form_Reservation.dateFinLoc) }}
@@ -424,19 +414,19 @@
 										</div>
 									
 
-                                    <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 											<div class="form_item" data-aos="fade-up" data-aos-delay="400">
 												<h4 class="input_title">Prix Réservation</h4>
 												<div class="position-relative">
-													{{ form_row(form_Reservation.prixReservation) }}
-													<label for="location_three" class="input_icon"><i class="fas fa-map-marker-alt"></i></label>
+													{{ form_row(form_Reservation.prixReservation, {'attr' : {'value' : voiture.prix }} ) }}
+													
 												</div>
 											</div>
 										</div>
-                                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 											<div class="form_item" data-aos="fade-up" data-aos-delay="500">
 												<h4 class="input_title">CIN</h4>
-												{{ form_row(form_Reservation.cin) }}
+													<input type="text" value="{{app.user.cin}}" readonly />
 											</div>
 										</div>
                                     </div>

@@ -59,6 +59,13 @@ class Voiture
      */
     private $prix;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $image;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -159,4 +166,17 @@ class Voiture
 
         return $this;
     }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
 }
